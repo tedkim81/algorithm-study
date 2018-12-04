@@ -1,5 +1,5 @@
 //
-//  backup1.cpp
+//  solved.cpp
 //  AlgorithmStudy
 //
 //  Created by 김태우 on 2016. 4. 9..
