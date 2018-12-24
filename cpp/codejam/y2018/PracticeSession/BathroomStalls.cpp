@@ -33,10 +33,8 @@
 
 #include <stdio.h>
 #include <iostream>
-#include <math.h>
 #include <string>
 #include <queue>
-#include <algorithm>
 
 using namespace std;
 
