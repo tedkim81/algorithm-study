@@ -14,6 +14,7 @@
 #include <set>
 #include <queue>
 #include <stack>
+#include <algorithm>
 
 using namespace std;
 
@@ -118,9 +119,18 @@ void test3() {
 		cout << s.top() << endl;
 		s.pop();
 	}
+}
 
+void test4() {
+	// 정렬
+	int a[5] = {2, 1, 3, 5, 4};
+	sort(a, a+5);
+	for (int i=0; i<5; i++) {
+		cout << a[i] << ",";
+	}
+	cout << endl;
 }
 
 int main() {
-	test3();
+	test4();
 }
