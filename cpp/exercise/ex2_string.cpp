@@ -39,6 +39,21 @@ void test2() {
 	cout << a << endl;
 }
 
+void test3() {
+	char aa[10];
+	cin >> aa;
+	cout << aa[0] << endl;
+}
+
+void test4() {
+	string aa = "Hello world!!";
+	if (aa[2] == 'l') {
+		cout << "OK!" << endl;
+	} else {
+		cout << "Oops.." << endl;
+	}
+}
+
 int main() {
-	test2();
+	test4();
 }
