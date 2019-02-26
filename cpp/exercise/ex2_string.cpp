@@ -54,6 +54,14 @@ void test4() {
 	}
 }
 
+void test5() {
+	double a = 1.23456789;
+	char b[100];
+	sprintf(b, "%.10f", a);
+	string c = b;
+	cout << b << endl;
+}
+
 int main() {
-	test4();
+	test5();
 }
