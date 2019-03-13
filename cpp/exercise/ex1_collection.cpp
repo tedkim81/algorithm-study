@@ -95,6 +95,7 @@ void test2() {
 	for (set<int>::iterator i = s.begin(); i != s.end(); i++) {
 		cout << *i << endl;
 	}
+	s.clear();
 }
 
 void test3() {
