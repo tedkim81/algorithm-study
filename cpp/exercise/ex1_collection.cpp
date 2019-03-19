@@ -130,6 +130,21 @@ void test4() {
 		cout << a[i] << ",";
 	}
 	cout << endl;
+
+	// 배열복제
+	int b[5];
+	copy(begin(a), end(a), begin(b));
+	for (int i=0; i<5; i++) {
+		cout << a[i] << ",";
+	}
+	cout << endl;
+
+	// 특정값으로 채우기
+	fill(a, a+5, 0);
+	for (int i=0; i<5; i++) {
+		cout << a[i] << ",";
+	}
+	cout << endl;
 }
 
 int main() {
