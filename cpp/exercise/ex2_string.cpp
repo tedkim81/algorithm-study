@@ -18,7 +18,10 @@ void test1() {
 	string w;
 	while (getline(ss, w, ' ')) {
 		cout << w << endl;
+		cout << "w sizeof: " << sizeof(w) << endl;  // 24
 	}
+	cout << "s sizeof: " << sizeof(s) << endl;  // 24
+	cout << "s.size(): " << s.size() << endl;  // 18
 }
 
 void test2() {
@@ -62,6 +65,21 @@ void test5() {
 	cout << b << endl;
 }
 
+void test6() {
+	cout << "== 문자열 정렬 ==" << endl;
+	string a[4] = {"cdefg", "bcdef", "defge", "abcedf"};
+	sort(a, a+4);
+	for (int i=0; i<4; i++) {
+		cout << a[i] << endl;
+	}
+	cout << "== char array for string ==" << endl;
+	char b[4][6] = {"cdefg", "bcdef", "defge", "abcde"};
+	// sort(b, b+4); => error!
+	for (int i=0; i<4; i++) {
+		cout << b[i] << endl;
+	}
+}
+
 int main() {
-	test5();
+	test1();
 }

@@ -25,6 +25,7 @@ void test1() {
 	m["bb"] = 100;
 	m["aa"] = 200;
 	m["cc"] = 50;
+	cout << "map size: " << m.size() << endl;
 	for (map<string, int>::iterator i = m.begin(); i != m.end(); i++) {  // old style
 		cout << i->first << " = " << i->second << endl;
 	}
@@ -148,5 +149,5 @@ void test4() {
 }
 
 int main() {
-	test4();
+	test1();
 }

@@ -5,10 +5,9 @@
  */
 
 #include <stdio.h>
-#include <string>
 #include <iostream>
-#include <sstream>
-#include <math.h>
+#include <map>
+#include <algorithm>
 
 using namespace std;
 
