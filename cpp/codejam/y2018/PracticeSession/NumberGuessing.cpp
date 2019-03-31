@@ -1,5 +1,6 @@
 /**
  * A < P <= B 인 정수 P를 N번의 시도 안에 맞추기
+ * #interactive
  *
  * (input)
  * T: 테스트케이스의 수
