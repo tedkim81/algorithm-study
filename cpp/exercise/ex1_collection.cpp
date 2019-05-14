@@ -93,6 +93,8 @@ void test2() {
 	s.insert(4);
 	s.insert(3);
 	s.insert(3);
+	s.insert(2);
+	s.insert(5);
 	for (set<int>::iterator i = s.begin(); i != s.end(); i++) {
 		cout << *i << endl;
 	}
@@ -149,5 +151,5 @@ void test4() {
 }
 
 int main() {
-	test1();
+	test2();
 }

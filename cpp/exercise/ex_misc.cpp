@@ -8,6 +8,10 @@
 #include <iostream>
 #include <map>
 #include <algorithm>
+#include <math.h>
+#include <set>
+#include <sstream>
+#include <vector>
 
 using namespace std;
 
