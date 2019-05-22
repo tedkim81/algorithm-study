@@ -2,7 +2,8 @@
  * 2018.12.11
  * 
  * A < P <= B 인 정수 P를 N번의 시도 안에 맞추기
- * 각 시도에 대하여, 답보다 작은 수였다면 TOO_SMALL, 큰 수였다면 TOO_BIG, 정답이라면 CORRECT을 응답해준다.
+ * 각 시도에 대하여, 답보다 작은 수였다면 TOO_SMALL, 
+ * 큰 수였다면 TOO_BIG, 정답이라면 CORRECT을 응답해준다.
  * #interactive #이분법
  *
  * (input)
@@ -16,6 +17,9 @@
  *
  * (solution 1)
  * 이분법 적용. A는 미포함, B는 포함임에 주의하자.
+ *
+ * (solution 1 result)
+ * 성공!!
  */
 
 #include <stdio.h>
