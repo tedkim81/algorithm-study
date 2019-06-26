@@ -35,6 +35,14 @@ void test1() {
 	// for (pair<string, int> mm : m) {  // new style --> warning occured
 	// 	cout << mm.first << " = " << mm.second << endl;
 	// }
+	if (m.find("bb") != m.end()) {
+		cout << "bb in m" << endl;
+	}
+	if (m.find("dd") == m.end()) {
+		cout << "dd not in m" << endl;
+	}
+	m.clear();
+	cout << "map size: " << m.size() << endl;
 
 	// 맵 2: 순서 개념이 없다. iterate하면 넣은 순서가 아닌 랜덤하게 나온다.
 	cout << "----- 맵 2 -----" << endl;
@@ -151,5 +159,5 @@ void test4() {
 }
 
 int main() {
-	test2();
+	test1();
 }
