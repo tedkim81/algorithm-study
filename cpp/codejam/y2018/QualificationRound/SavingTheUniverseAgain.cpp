@@ -1,10 +1,14 @@
 /**
  * 2018.12.24
  *
+ * https://codingcompetitions.withgoogle.com/codejam/round/00000000000000cb/0000000000007966
+ *
  * 외계인 로봇이 공격을 계획하고 있는데, SCCSCS.. 처럼 공격 스케줄을 짰다.
- * S는 shooting으로 공격하여 데미지를 입히는 것인데, 데미지는 1로 시작하고, C는 데미지를 2배씩 올린다.
+ * S는 공격하여 데미지를 입히는 것인데(shoot), 데미지는 1로 시작하고, 
+ * C는 데미지를 2배씩 올린다(charge).
  * 이를 방어해야 하는데, 최대 D의 데미지까지 견딜 수 있다.
- * 공격 스케줄을 해킹해서 데미지를 D 이내로 줄이고자 하는데, 스케줄의 인접한 두 글자를 바꿔치기하는 방식이다.
+ * 공격 스케줄을 해킹해서 데미지를 D 이내로 줄이고자 하는데, 
+ * 스케줄의 인접한 두 글자를 바꿔치기하는 방식이다.
  * 해킹은 최소 몇번 해야할까?
  *
  * (input)
@@ -40,7 +44,7 @@ string solve(int D, string P) {
 	int dd = 0;
 	int cur = 1;
 	int cqty = 0;
-	for (string::size_type i = 0; i < P.size(); i++) {
+	for (int i = 0; i < P.size(); i++) {
 		if (P[i] == 'C') {
 			cur *= 2;
 			if (i < P.size()-1) cqty++;
@@ -52,11 +56,10 @@ string solve(int D, string P) {
 	if (dd <= 0) return "0";
 
 	int cnt = 0;
-	for (string::size_type ii = P.size()-1; ii > 0; ii--) {
-		int i = ii - 1;
+	for (int i = P.size()-2; i >= 0; i--) {
 		if (P[i] == 'C') {
 			cqty--;
-			for (string::size_type j = i; j < P.size()-1; j++) {
+			for (int j = i; j < P.size()-1; j++) {
 				if (P[j+1] == 'C') break;
 				P[j] = 'S';
 				P[j+1] = 'C';
