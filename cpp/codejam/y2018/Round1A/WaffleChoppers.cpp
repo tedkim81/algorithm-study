@@ -1,10 +1,13 @@
 /**
  * 2019.1.26
  *
+ * https://codingcompetitions.withgoogle.com/codejam/round/0000000000007883/000000000003005a
+ *
  * 제목은 "와플 자르는 사람"
  * R x C 크기의 커다란 격자모양 와플을 만들어서, 그 위에 초코칩을 랜덤하게 올리고 나서,
  * 횡으로(가로로) H번 자르고, 종으로(세로로) V번 잘라서 사람들한테 나눠준단다.
- * 잘라진 조각의 크기는 같을 필요가 없는데, 잘라진 모든 조각 각각에 있는 초코칩의 수는 같아야 한단다.
+ * 잘라진 조각의 크기는 같을 필요가 없는데, 
+ * 잘라진 모든 조각 각각에 있는 초코칩의 수는 같아야 한단다.
  * 이게 가능하면 POSSIBLE, 불가능하면 IMPOSSIBLE 을 출력하는 문제.
  *
  * (input)
@@ -133,14 +136,7 @@ bool cut_h(int h_pos, int h_cnt) {
 }
 
 string solve() {
-	cnt_choco_total = 0;
-	for (int i=0; i<R; i++) {
-		for (int j=0; j<C; j++) {
-			if (waffle[i][j] == '@') {
-				cnt_choco_total++;
-			}
-		}
-	}
+	cnt_choco_total = get_choco_cnt(0, 0, R-1, C-1);
 	if (cnt_choco_total == 0) {
 		return "POSSIBLE";
 	}
