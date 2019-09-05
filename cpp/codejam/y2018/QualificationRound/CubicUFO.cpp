@@ -1,6 +1,8 @@
 /**
  * 2019.1.8
  *
+ * https://codingcompetitions.withgoogle.com/codejam/round/00000000000000cb/00000000000079cc
+ *
  * 한 모서리의 길이가 1km인 정육면체 형태의 UFO가 토론토 위에 떴단다.
  * (얘들 요즘 문제가 다 인런식인듯..;;)
  * x,y,z축이 있는 3차원 공간 안에 있는데, 
