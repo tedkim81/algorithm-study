@@ -68,6 +68,10 @@
  *   if no_change:
  *     break
  * return row and bb
+ * --------------------------------------------
+ *
+ * (solution 1 result)
+ * 성공!!
  */
 
 #include <stdio.h>

@@ -12,6 +12,7 @@
 #include <set>
 #include <sstream>
 #include <vector>
+#include <list>
 
 using namespace std;
 
