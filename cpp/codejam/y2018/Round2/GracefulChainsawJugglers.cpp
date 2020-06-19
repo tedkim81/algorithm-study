@@ -1,7 +1,11 @@
 /**
  * 2020.2.28
  *
+ * Code jam page url:
  * https://codingcompetitions.withgoogle.com/codejam/round/0000000000007706/00000000000459f3
+ *
+ * Github page url:
+ * https://github.com/tedkim81/algorithm-study/blob/master/cpp/codejam/y2018/Round2/GracefulChainsawJugglers.cpp
  *
  * 전기톱으로 저글링을 하는 쇼가 있다. 
  * 전기톱은 빨간색이 R개, 파란색이 B개 있고, 저글러는 충분히 많이 있는 상황.
@@ -53,8 +57,8 @@
  *     rr = ll[i].first
  *     bb = ll[i].second
  *     if R >= rr and B >= bb:
- *       int size = (R-rr) + (B-bb)
- *       int diff = abs((R-rr) - (B-bb))
+ *       int size = (R-rr) + (B-bb) // R과 B의 남은 수
+ *       int diff = abs((R-rr) - (B-bb)) // 남은 R과 B의 차이
  *       if size >= size2 and diff < diff2:
  *         i2 = i
  *         size2 = size
@@ -84,7 +88,7 @@
  * 다른 문제 풀 때와 비슷한 방식으로 접근하니 Test set 1 까지는 풀어낼 방법이 있었다.
  * (Ri,Bi) 집합에서 순서대로 하나씩 선택할지 말지를 결정하면서 탐색하고,
  * 남은 집합을 표현하는 값과 남은 R과 B를 메모이제이션해서 탐색을 줄여주는 방식이다.
- * GracefulChainsawJugglers2.cpp 참고
+ * GracefulChainsawJugglers2.cpp의 Solution2 참고.
  * 하지만 Test set 2에서는 R과 B가 최대 500이고, 메모이제이션 해야할 크기가
  * 500^4 가 되기 때문에 동일한 알고리즘으로는 풀 수가 없다.
  * 이래저래 생각해보다가 시간이 너무 지체되어 ANALYSIS를 참고하기로 했다.
@@ -92,14 +96,30 @@
  *
  * ANALYSIS 정리
  *
- * 먼저, R과 B에 대한 결과값은 test case가 달라져도 변하지 않는다는 것을 얘기한다.
- * R=5,B=5 주어졌을때의 값과, 
- * R=500,B=500 주어졌을때 그 안에서 R=5,B=5일때의 값은 같다는 것이다.
- * 즉, 0<=R<=500, 0<=B<=500 에 대해서 미리 값을 계산해 두면 된다.
+ * 0<=B<=B최대값, 0<=R<=R최대값 을 만족하는 모든 (bb,rr) 집합을 만들고,
+ * (bb,rr)의 집합을 차례대로 탐색하면서 i번째의 (bi,ri)가 정답집합에 포함될 경우와 
+ * 그렇지 않은 경우를 재귀적으로 탐색하면서 결과집합의 최대값을 구한다.
+ * 이때, i,bb,rr 값에 대해 메모이제이션을 하면 그 크기가 ((B+1)^2)*((R+1)^2) 이므로
+ * Test set 1은 해결 가능하지만 Test set 2는 불가능하다. 
+ * (위의 solution2도 이와 같은 방식이다.)
  *
- * 그리고, (bb,rr) 집합에 대해 아래와 같이 증명하여 결국 그 집합을
- * minimal weak b,r valid set 으로 제한한다.
- * minimal... 으로 제한하면, 집합에 (bb,rr)이 있다고 가정할 경우
+ * Test set 2를 해결하기 위해서는, Test case가 달라도(즉, B와 R이 계속 바뀌어도) 
+ * 같은 메모이제이션 테이블을 사용할 수 있음을 알아차려야 한다고 ANALYSIS에서 설명한다.
+ * 하지만 이후 내용을 보면, 메모이제이션은 (i,bb,rr)이 아니라 (bb,rr)에 대해 저장하고,
+ * 정답집합의 특징도 다시 정리해야 문제를 해결할 수 있기 때문에, 위의 해결방식에서
+ * 바로 "Test case가 달라도 같은 메모이제이션 테이블을 사용할 수 있음을 알아차리기"는 
+ * 어렵지 않나 싶다.
+ *
+ * Test set 2를 해결하기 위해서는, 아래와 같은 가정을 이끌어내어
+ * (bb,rr)에 대한 메모이제이션 테이블을 미리 만들어두고 모든 Test case에 적용할 수 있음을
+ * 발견해내야 한다.
+ * B=2,R=2일때의 정답집합은 B=1,R=1일때의 정답집합을 포함한다.
+ * 즉, B=b,R=r일때의 정답집합은 B=b-a, R=r-b (a>=0, b>=0)일때의 정답집합을 포함한다.
+ *
+ * 이제 좀더 구체적으로 과정을 정리해보자.
+ * 
+ * 정답집합이 minimal weak b,r valid set에 포함됨을 증명한다.
+ * 그러면 집합에 (bb,rr)이 있다고 가정할 경우
  * 0<=i<=bb, 0<=j<=rr 인 i,j에 대해 (bb-i, rr-j)가 모두 있음을 전제할 수 있다.
  * 
  * - b,r valid set: left 합이 B, right 합이 R 인 (bb,rr)의 집합

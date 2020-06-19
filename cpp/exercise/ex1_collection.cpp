@@ -142,6 +142,11 @@ void test4() {
 	}
 	cout << endl;
 
+	// 최대값, 최소값
+	int min_a = *min_element(a, a+5);
+	int max_a = *max_element(a, a+5);
+	cout << min_a << "," << max_a << endl;
+
 	// 배열복제
 	int b[5];
 	copy(begin(a), end(a), begin(b));
@@ -159,5 +164,5 @@ void test4() {
 }
 
 int main() {
-	test1();
+	test4();
 }

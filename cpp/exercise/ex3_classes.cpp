@@ -13,6 +13,10 @@
 
 using namespace std;
 
+/**
+ * 이분그래프
+ * 최대매칭 크기 구하기
+ */
 class BipartiteGraph {
 public:
 	vector<set<int> > graph;
