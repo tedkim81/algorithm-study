@@ -1,6 +1,8 @@
 /**
  * 2020.3.11
  *
+ * https://github.com/tedkim81/algorithm-study/blob/master/cpp/codejam/y2018/Round2/CostumeChange.cpp
+ *
  * 어떤 안무가가 자기 커리어 N년 기념일을 맞이하여 댄스파티를 연다.
  * N x N 격자 모양의 무대에서 한칸에 한명씩 댄서가 춤을 출 예정인데
  * 댄서들을 위한 옷도 N가지 색상으로 준비했다. 소재도 울 또는 면 두가지다.
