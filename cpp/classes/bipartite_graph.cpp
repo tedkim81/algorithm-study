@@ -1,8 +1,3 @@
-/**
- * 2020.3.24
- *
- * 알아둬야할 주요 알고리즘들 class로 구현해 두는 곳
- */
 #include <stdio.h>
 #include <iostream>
 #include <algorithm>
@@ -14,6 +9,8 @@
 using namespace std;
 
 /**
+ * 2020.3.24
+ * 
  * 이분그래프
  * 최대매칭 크기 구하기
  */
