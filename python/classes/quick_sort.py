@@ -3,26 +3,20 @@ class QuickSort:
 	def sort(self, nums, s, e):
 		if s >= e:
 			return
-		elif s == e-1:
-			if nums[s] > nums[e]:
-				nums[s],nums[e] = nums[e],nums[s]
-			return
 		pivot = e
 		i = s
 		j = e-1
 		while i < j:
 			while i < j and nums[i] <= nums[pivot]:
 				i += 1
-			while i < j and nums[j] > nums[pivot]:
+			while i < j and nums[j] >= nums[pivot]:
 				j -= 1
-			if i < j:
-				nums[i],nums[j] = nums[j],nums[i]
-			else:
-				if nums[j] <= nums[pivot]:
-					j += 1
-				nums[j],nums[pivot] = nums[pivot],nums[j]
-				pivot = j
+			if i >= j:
 				break
+			nums[i],nums[j] = nums[j],nums[i]
+		if nums[i] >= nums[pivot]:
+			nums[i],nums[pivot] = nums[pivot],nums[i]
+			pivot = i
 		self.sort(nums, s, pivot-1)
 		self.sort(nums, pivot+1, e)
 
