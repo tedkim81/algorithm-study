@@ -1,7 +1,8 @@
 '''
 https://leetcode.com/problems/next-permutation/
-'''
 
+사전순으로 나열된다고 할때 주어진 순열의 다음 순열 찾기.
+'''
 class Solution:
     def nextPermutation(self, nums) -> None:
         changed = False

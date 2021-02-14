@@ -1,7 +1,8 @@
 '''
 https://leetcode.com/problems/implement-strstr/
-'''
 
+문자열 검색 알고리즘인 KMP 알고리즘의 구현.
+'''
 class Solution:
     def strStr(self, haystack: str, needle: str) -> int:
         if len(needle) == 0:
